@@ -16,7 +16,7 @@ public class BlockChainService implements BlockChainApi {
 
     public BlockChainService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://127.0.0.1:8545/")
+                .baseUrl("http://127.0.0.1:5931/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
