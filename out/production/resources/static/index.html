@@ -58,7 +58,7 @@
             $('#auth').click(function () {
                 $.getJSON('/registration', function (data) {
                     console.log(data);
-                    var uri = "data?serverUrl=http%3A%2F%2Fauthcoin-demo-server.cfapps.io&serverEir=" + data.serverEir + "&appName=" + data.appName + "&sessionId=" + data.id;
+                    var uri = "data?serverUrl=http%3A%2F%2Fauthcoin.herokuapp.com&serverEir=" + data.serverEir + "&appName=" + data.appName + "&sessionId=" + data.id;
                     console.log(uri);
                     Cookies.set("authcoin_bank_id", data.id);
                     $('#auth').hide();
