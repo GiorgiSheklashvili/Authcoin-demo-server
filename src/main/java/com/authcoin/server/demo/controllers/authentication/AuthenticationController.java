@@ -20,16 +20,16 @@ import java.util.UUID;
 
 /**
  * User registration flow:
- * 1. Client calls (HTTP GET) register endpoint. Server sends back an EIR ID, , nonce (public key + signature currently not implemented)
- * 2. Client receives response. Checks signature. Checks EIR. Shows info in Authcoin app => User select challenge.
- * 3. Client creates a challenge ((+nonce+1)+signature) and sends it to the server.
- * 4. Server verifies challenge. Generates it's own. and sends it to the client.
- * 5. client verifies server challenge. shows this to end-user and generates response. finally sends it to the server
- * 6. server verifies the response. and sends back it's own response.
- * 7. client verifies the response. and signs it. sends result to the server.
- * 8. server verifies the response and send its own SR to client
- * 9. client or server saves all the stuff to the blockchain.
- * 10. client sends txId to server. registration complete.
+ * 1. Client(browser) calls (HTTP GET) register endpoint. Server(Spring project) sends back an EIR ID, , nonce (public key + signature currently not implemented)
+ * 2. Client(browser) receives response. Checks signature. Checks EIR. Shows info in Authcoin app => User select challenge.
+ * 3. Client(android app) creates a challenge ((+nonce+1)+signature) and sends it to the server(Spring project).
+ * 4. Server(Spring project) verifies challenge. Generates it's own. and sends it to the client(android app).
+ * 5. client(android app) verifies server challenge. shows this to end-user and generates response(fulfills the challenge). finally sends it to the server(spring project)
+ * 6. server(spring project) verifies the response. and sends back it's own response.
+ * 7. client(android app) verifies the response. and signs it. sends result to the server(spring project).
+ * 8. server(spring rpoject) verifies the response and send its own SR(singns it) to client(android app)
+ * 9. client(android app) or server(spring project) saves all the stuff to the blockchain.
+ * 10. client(android app) sends txId to server. registration complete.
  * <p>
  * Notes about the implementation:
  * 1. It is as unsecure as it can be because
